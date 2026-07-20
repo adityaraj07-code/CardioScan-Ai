@@ -10,8 +10,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 
-
-DATA_PATH = "heart_disease_uci.csv"
 MODEL_DIR = "models"
 
 os.makedirs(MODEL_DIR, exist_ok=True)
@@ -19,7 +17,7 @@ os.makedirs(MODEL_DIR, exist_ok=True)
 # -----------------------------
 # Load Dataset
 # -----------------------------
-df = pd.read_csv(DATA_PATH)
+df = pd.read_csv("heart_disease_uci.csv")
 
 # Binary target
 df["target"] = (df["num"] > 0).astype(int)
